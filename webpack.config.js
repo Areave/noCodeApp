@@ -70,7 +70,8 @@ module.exports = function (_, webpackEnv) {
 
     const tsRule = {
         test: /\.(ts|tsx)$/,
-        use: ['ts-Loader']
+        exclude: /node_modules/,
+        loader: 'ts-loader'
     };
 
     const cssRule = {
