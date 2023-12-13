@@ -10,7 +10,8 @@ export namespace Types {
     // ENTITY TYPES
 
     export interface User {
-        name: string
+        name: string,
+        picture: string
     }
     export interface Message {
         // type: messageTypes.ERROR | messageTypes.MESSAGE,
@@ -35,9 +36,7 @@ export namespace Types {
 
     export interface AuthPage {}
 
-    export interface MainPage {
-        name: string
-    }
+    export interface MainPage {}
 
     // COMPS
 

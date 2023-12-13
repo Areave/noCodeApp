@@ -23,7 +23,7 @@ const App: React.FC<any> = () => {
         {!isLoading && <Routes>
             {!isAuthorized && <Route path='/' element={<AuthPage/>}/>}
             {!isAuthorized && <Route path='/*' element={<AuthPage/>}/>}
-            {isAuthorized && <Route path='/main' element={<MainPage name={user?.name}/>}/>}
+            {isAuthorized && <Route path='/main' element={<MainPage/>}/>}
         </Routes>}
     </React.StrictMode>;
 };

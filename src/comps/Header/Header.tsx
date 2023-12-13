@@ -24,9 +24,8 @@ const Header: React.FC<Types.Header> = ({name}) => {
 
     return <div className='header'>
         <div className='name'>
-            {name}
+            {'HELLO, ' + name}
         </div>
-        <button onClick={onLogout}>logout</button>
     </div>
 };
 
