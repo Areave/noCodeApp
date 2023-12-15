@@ -1,5 +1,5 @@
 import React from 'react'
-import './Comp.scss'
+import './comp.scss'
 import {Types} from '../../utils/types'
 
 const Comp: React.FC<Types.Comp> = () => {

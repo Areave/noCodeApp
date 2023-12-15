@@ -1,5 +1,5 @@
 import React from 'react'
-import './Loader.scss'
+import './loader.scss'
 import {Types} from "../../utils/types";
 
 const Loader: React.FC<Types.Loader> = ({isForItem}) => {

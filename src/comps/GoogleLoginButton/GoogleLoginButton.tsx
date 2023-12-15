@@ -1,5 +1,5 @@
 import React from 'react'
-import './GoogleLoginButton.scss'
+import './googleLoginButton.scss'
 import {Types} from '../../utils/types'
 import {GOOGLE_CLIENT_ID} from "../../public.config";
 import GoogleLogin from "react-google-login";

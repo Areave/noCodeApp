@@ -1,5 +1,5 @@
 import React from "react";
-import './Header.scss'
+import './header.scss'
 import {Types} from "../../utils/types";
 import {useNavigate} from "react-router";
 import {setIsAuthorizedAction} from "../../utils/store/actionCreators";
