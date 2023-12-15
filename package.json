@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "engines": {
-    "node": "20.x"
+    "node": "18.x"
   },
   "keywords": [],
   "author": "",
