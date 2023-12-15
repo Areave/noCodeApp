@@ -34,6 +34,7 @@ module.exports = function (_, webpackEnv) {
     const isDevelopment = webpackEnv.mode === 'development';
     const isProduction = webpackEnv.mode === 'production';
     const getStyleLoaders = () => {
+        console.log(isDevelopment, isProduction);
         return [
             isDevelopment && 'style-Loader',
             isProduction && MiniCss.loader,
@@ -76,7 +77,7 @@ module.exports = function (_, webpackEnv) {
 
     const cssRule = {
         test: /\.s?css$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         use: getStyleLoaders()
     };
 
@@ -129,7 +130,6 @@ module.exports = function (_, webpackEnv) {
             'process.env': {
                 NODE_ENV: JSON.stringify(webpackEnv.mode),
             },
-            // ...
         })],
         devServer: {
             historyApiFallback: true,
