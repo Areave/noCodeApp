@@ -9,6 +9,7 @@ import {GOOGLE_CLIENT_ID} from "../../public.config";
 import {GoogleLogin} from '@react-oauth/google';
 import {setIsAuthorizedAction, setUserAction} from "../../utils/store/actionCreators";
 import {jwtDecode} from "jwt-decode";
+import DemoGraph from "../../comps/DemoGraph/DemoGraph";
 
 const AuthPage: React.FC<Types.AuthPage> = () => {
 

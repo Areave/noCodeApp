@@ -7,6 +7,7 @@ import {setIsAuthorizedAction} from "../../utils/store/actionCreators";
 import {useNavigate} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../utils/store";
+import DemoGraph from "../../comps/DemoGraph/DemoGraph";
 
 const MainPage: React.FC<Types.MainPage> = () => {
     const navigate = useNavigate();

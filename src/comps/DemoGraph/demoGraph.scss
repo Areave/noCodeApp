@@ -1,0 +1,15 @@
+@use '../../style/style' as styles;
+
+.demo-graph {
+  .joint-paper {
+    border: 1px solid black;
+    width: 80%;
+    height: 500px !important;
+    margin-top: 100px !important;
+  }
+
+  .canvas {
+    width: 100vw;
+    height: 100vh;
+  }
+}
