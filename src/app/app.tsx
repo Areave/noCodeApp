@@ -10,8 +10,16 @@ import {ToastContainer} from "../comps/ToastContainer/toastContainer";
 import {useSelector} from "react-redux";
 import {RootState} from "../utils/store";
 import DemoGraph from "../comps/DemoGraph/DemoGraph";
+import Mi from "../comps/Mikael/Mi";
 import {Link} from "react-router-dom";
 import DemoDataBase from "../comps/DemoDataBase/DemoDataBase";
+
+import '../css/style.css';
+import '../css/theme-picker.css';
+import '../css/style.dark.css';
+import '../css/style.material.css';
+import '../css/style.modern.css';
+import Test from "../comps/Test/Test";
 
 const App: React.FC<any> = () => {
 
@@ -27,12 +35,16 @@ const App: React.FC<any> = () => {
         {/*<ToastContainer messages={messages}/>*/}
         {/*{isLoading && <LoadingPage/>}*/}
         <div className="">
+            <Link className='navigation_link ps-3' to="/">test</Link>
             <Link className='navigation_link ps-3' to="/demoGraph">demoGraph</Link>
             <Link className='navigation_link ps-3' to="/demoDataBase">demoDataBase</Link>
+            <Link className='navigation_link ps-3' to="/mi">Мишино</Link>
         </div>
         <Routes>
+            <Route path='/' element={<Test/>}/>
             <Route path='/demoGraph' element={<DemoGraph/>}/>
             <Route path='/demoDataBase' element={<DemoDataBase/>}/>
+            <Route path='/mi' element={<Mi/>}/>
         </Routes>
         {/*{!isLoading && <Routes>*/}
         {/*    /!*{!isAuthorized && <Route path='/' element={<AuthPage/>}/>}*!/*/}
