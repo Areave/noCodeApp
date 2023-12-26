@@ -35,13 +35,14 @@ const App: React.FC<any> = () => {
         {/*<ToastContainer messages={messages}/>*/}
         {/*{isLoading && <LoadingPage/>}*/}
         <div className="">
-            <Link className='navigation_link ps-3' to="/">test</Link>
+            <Link className='navigation_link ps-3' to="/test">test</Link>
             <Link className='navigation_link ps-3' to="/demoGraph">demoGraph</Link>
             <Link className='navigation_link ps-3' to="/demoDataBase">demoDataBase</Link>
             <Link className='navigation_link ps-3' to="/mi">Мишино</Link>
         </div>
         <Routes>
-            <Route path='/' element={<Test/>}/>
+            <Route path='/' element={<Mi/>}/>
+            <Route path='/test' element={<Test/>}/>
             <Route path='/demoGraph' element={<DemoGraph/>}/>
             <Route path='/demoDataBase' element={<DemoDataBase/>}/>
             <Route path='/mi' element={<Mi/>}/>

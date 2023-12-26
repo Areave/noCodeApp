@@ -647,11 +647,13 @@ const Mi: React.FC<any> = () => {
 
 
         window.addEventListener("resize", () => scaleToFit());
-        scaleToFit();
+        // scaleToFit();
 
 
         const pc = document.getElementById("paper-container");
         pc.appendChild(paper.el);
+
+        scaleToFit();
 
         return () => {
             // scroller.remove();
