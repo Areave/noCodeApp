@@ -19,7 +19,9 @@ import '../css/theme-picker.css';
 import '../css/style.dark.css';
 import '../css/style.material.css';
 import '../css/style.modern.css';
+import '@clientio/rappid/rappid.css';
 import Test from "../comps/Test/Test";
+import Application from "../comps/Application/Application";
 
 const App: React.FC<any> = () => {
 
@@ -36,13 +38,15 @@ const App: React.FC<any> = () => {
         {/*{isLoading && <LoadingPage/>}*/}
         <div className="">
             <Link className='navigation_link ps-3' to="/test">test</Link>
+            <Link className='navigation_link ps-3' to="/app">application</Link>
             <Link className='navigation_link ps-3' to="/demoGraph">demoGraph</Link>
             <Link className='navigation_link ps-3' to="/demoDataBase">demoDataBase</Link>
             <Link className='navigation_link ps-3' to="/mi">Мишино</Link>
         </div>
         <Routes>
-            <Route path='/' element={<Mi/>}/>
+            <Route path='/' element={<Application/>}/>
             <Route path='/test' element={<Test/>}/>
+            <Route path='/app' element={<Application/>}/>
             <Route path='/demoGraph' element={<DemoGraph/>}/>
             <Route path='/demoDataBase' element={<DemoDataBase/>}/>
             <Route path='/mi' element={<Mi/>}/>

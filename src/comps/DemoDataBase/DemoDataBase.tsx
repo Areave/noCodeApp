@@ -58,14 +58,14 @@ const DemoDataBase: React.FC<any> = () => {
             baseHeight: 100,
             inertia: { friction: 0.8 },
             autoResizePaper: true,
-            contentOptions: function() {
-                return {
-                    useModelGeometry: true,
-                    allowNewOrigin: 'any',
-                    padding: 40,
-                    allowNegativeBottomRight: true
-                };
-            }
+            // contentOptions: function() {
+            //     return {
+            //         useModelGeometry: true,
+            //         allowNewOrigin: 'any',
+            //         padding: 40,
+            //         allowNegativeBottomRight: true
+            //     };
+            // }
         });
 
         canvasEl.appendChild(scroller.el);
@@ -327,6 +327,27 @@ const DemoDataBase: React.FC<any> = () => {
                 inputEl.focus();
             }
         }
+
+        // const scroller = new ui.PaperScroller({
+        //     paper,
+        //     cursor: 'grab',
+        //     baseWidth: 100,
+        //     baseHeight: 100,
+        //     inertia: { friction: 0.8 },
+        //     autoResizePaper: true,
+        //     contentOptions: function() {
+        //         return {
+        //             useModelGeometry: true,
+        //             allowNewOrigin: 'any',
+        //             padding: 40,
+        //             allowNegativeBottomRight: true
+        //         };
+        //     }
+        // });
+        //
+        //
+        // document.getElementById("paper-container").appendChild(scroller.el);
+        // scroller.render().center();
 
         return () => {
             scroller.remove();

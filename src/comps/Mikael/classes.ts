@@ -1,7 +1,14 @@
 import {COLORS, NAME_HEIGHT, RADIUS, TYPE_HEIGHT, UNIT} from "./const";
 import {getPackagePort} from "./getPackagePort";
-import {shapes, util} from '@clientio/rappid'
-
+import {
+    dia,
+    shapes,
+    util,
+    ui,
+    linkTools,
+    elementTools,
+    connectionStrategies
+} from '@clientio/rappid'
 export class UMLLink extends shapes.standard.Link {
     defaults() {
         return util.defaultsDeep(
@@ -29,7 +36,6 @@ export class UMLLink extends shapes.standard.Link {
         );
     }
 }
-
 export class Aggregation extends UMLLink {
     defaults() {
         return util.defaultsDeep(
@@ -275,7 +281,6 @@ export class UMLComponent extends UML {
         );
     }
 }
-
 export class UMLClass extends UML {
     defaults() {
         return {

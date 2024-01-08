@@ -110,7 +110,6 @@ export function createLabels(comments: any) {
         };
     });}
 
-
 export function updateLabelsTextAnchor(link: any) {
     const labels = util.cloneDeep(link.labels()).map((label: any) => {
         let anchorDef, element;

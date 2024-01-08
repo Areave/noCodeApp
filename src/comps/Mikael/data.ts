@@ -1,3 +1,7 @@
+import {Aggregation, UMLClass} from "./classes";
+import {MARGIN} from "./const";
+import {createLabels} from "./getPackagePort";
+
 const sourceData = {
     "data": {
         "objects": [
@@ -86,7 +90,8 @@ const sourceData = {
                 "is_dealer": false,
                 "master_id": 8,
                 "with_memo": false,
-            }, {
+            },
+            {
                 "id": 10,
                 "memo": "terminal_domain",
                 "name": "Domain",
@@ -133,7 +138,8 @@ const sourceData = {
                         "default_value": null
                     }, {"id": 73, "memo": "TERMINAL_ENABLE_DOUBLE_BILL", "name": "Enable double bill", "data_type": "bool", "default_value": null}],
                 "with_image": false
-            }, {
+            },
+            {
                 "id": 13,
                 "memo": "dealer_group",
                 "name": "Dealer Group",
@@ -171,7 +177,8 @@ const sourceData = {
                     "id": 77, "memo": "DEFAULT_TIMEZONE", "name": "Default timezone", "data_type": "varchar", "default_value": null
                 }],
                 "with_image": false
-            }, {
+            },
+            {
                 "id": 15,
                 "memo": "currency",
                 "name": "Currency",
@@ -197,7 +204,8 @@ const sourceData = {
                     "id": 9, "memo": "DEFAULT_LANGUAGE", "name": "Default language", "data_type": "varchar", "default_value": null
                 }],
                 "with_image": false
-            }, {
+            },
+            {
                 "id": 17,
                 "memo": "operator",
                 "name": "Operator",
@@ -304,7 +312,8 @@ const sourceData = {
                     "default_value": null
                 }],
                 "with_image": false
-            }, {
+            },
+            {
                 "id": 19,
                 "memo": "bank",
                 "name": "Bank",
@@ -324,7 +333,8 @@ const sourceData = {
                 "with_memo": false,
                 "parameters": null,
                 "with_image": false
-            }, {
+            },
+            {
                 "id": 21,
                 "memo": "account",
                 "name": "Account",
@@ -344,7 +354,8 @@ const sourceData = {
                 "with_memo": false,
                 "parameters": null,
                 "with_image": false
-            }, {
+            },
+            {
                 "id": 23,
                 "memo": "service_booking_category",
                 "name": "Service booking category",
@@ -372,7 +383,8 @@ const sourceData = {
                     "default_value": null
                 }],
                 "with_image": false
-            }, {
+            },
+            {
                 "id": 25,
                 "memo": "service_booking_class",
                 "name": "Service booking classes",
@@ -736,6 +748,39 @@ const data = objects.map((item, i) => {
         }
     };
     return res;
+});
+
+export const storeCells = {};
+// @ts-ignore
+export const storeLinks = [];
+data.forEach((item, i)=>{
+    // @ts-ignore
+    storeCells[item.id] = new UMLClass({
+        size: { width: 220 , height: 30},
+        position: { x: Math.round(i/5) * 180, y: i%5 * 300 },
+        padding: { bottom: 2 * MARGIN },
+        ...item.data});
+});
+
+data.forEach((item, i)=>{
+    if (!item.master_id) return;
+    storeLinks.push(
+        new Aggregation({
+            // @ts-ignore
+            source: { id: storeCells[item.id].id },
+            // @ts-ignore
+            target: { id: storeCells[item.master_id].id, anchor: { name: "right" } },
+            labels: createLabels([
+                {
+                    type: "label-target",
+                    content: "seed"
+                },
+                {
+                    type: "multiplicity-target",
+                    content: "1..*"
+                }
+            ])
+        }));
 });
 
 export default data;

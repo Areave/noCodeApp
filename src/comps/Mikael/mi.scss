@@ -2,15 +2,26 @@
 
 .mishino {
 
+
+
   #paper-container {
-    margin-top: 100px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
+    //margin-top: 100px;
+  //  position: absolute;
+  //  right: 0;
+  //  top: 0;
+  //  left: 0;
+  //  bottom: 0;
+  //  height: 100%;
+  //  width: 100%;
+    width: 90%;
+    margin: auto;
+  }
+
+  .joint-paper-scroller {
+    border: 1px solid black;
+    width: 80%;
+    height: 500px !important;
+    margin-top: 100px !important;
   }
 }
 
